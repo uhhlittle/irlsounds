@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
+  root to: 'application#index'
+
+  # devise_for :users do
+  #   DELETE '/users/sign_out' => 'devise/sessions#destroy'
+  #   redirect_to :root
+  # end
+
   devise_for :users
+
+
+  def after_sign_out_path_for(resource_or_scope)
+
+  end
+
+  resources :profiles
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

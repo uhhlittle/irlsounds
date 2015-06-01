@@ -1,3 +1,4 @@
 class Profile < ActiveRecord::Base
-  has_many :activities
+  belongs_to :user
+  has_many :genres
 end
