@@ -1,6 +1,5 @@
 var ProfileView = Backbone.View.extend({
-  className: 'profile',
-  tagName: 'div',
+  el: '#profile_view',
 
   events: {
     // 'click.finish': 'markComplete'

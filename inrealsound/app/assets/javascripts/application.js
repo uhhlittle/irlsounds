@@ -30,25 +30,19 @@ var globals = {
 }
 
 /*Delete this!*/
-var Profile = function(){
-  this.activities = [];
-}
 
-var newProfile = new Profile();
+
 
 /* Profile model */
-for( var x = 0; x < globals.activities.length; x++){
-  newProfile.activities.push(Activity.new(globals.activities[x]));
-}
+
 /* ProfileView model */
-render(profile.activities)
+// render(profile.activities)
 /*Delete above!*/
 
 
-$(document).ready(loadActivitiesApp);
+$(document).ready(loadProfileApp);
 
-function loadActivitiesApp() {
-  mainCollection = new ActivitiesCollection();
-  mainListView = new ActivitiesListView({collection: mainCollection});
-  mainCollection.fetch({reset: true});
+function loadProfileApp() {
+  new ProfileRouter();
+  Backbone.history.start();
 }
