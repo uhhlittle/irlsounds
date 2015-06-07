@@ -3,20 +3,29 @@
 <head>
   <title>Inrealsound</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
     <ul class= "right">
-      <% if current_user %>
-          <li><em><%= link_to "Welcome #{current_user.email}", '/profile'%></em></li>
-          <li> below is delete session </li>
-          <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete%> </li>
+      <% if current_user && current_user.profile %>
+      <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete%> </li>
+      <li><%= link_to "Edit Profile", edit_profile_path %></li>
+      <li><em><%= link_to "Welcome #{current_user.email}", profile_path(current_user.profile)%></em></li>
+      <% elsif current_user %>
+        <li><em><%= link_to "Welcome #{current_user.email}", '/profile'%></em></li>
+        <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
       <% else %>
         <li>  <%= link_to "Sign up", new_user_registration_path, class: "sign_up" %> </li>
         <li>  <%= link_to "Login", new_user_session_path, class: "login" %> </li>
       <% end %>
+    </ul>
+    <ul class="left">
+      <div id="logo">
+        <h1>tru<em>FLO</em></h1>
+      </div>
     </ul>
   </header>
 

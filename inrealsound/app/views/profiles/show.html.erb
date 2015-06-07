@@ -1,9 +1,54 @@
-<h1> Welcome <%=@profile.name %> </h1>
+
 <div class= "profile_view" >
-  <div id= "view_buttons">
-    <%= link_to "Edit Profile Info", edit_profile_path %>
-  </div>
-  <div class="activities"></div>
-  <div id= "Genres">
-  </div>
+  <!-- <div id= "view_buttons">
+
+  </div> -->
+    <div id="current-activity-column" class="column">
+      <h2 class="column-heading">Activities:</h2>
+        <ul class="activity-list">
+        </ul>
+    </div>
+
+    <div id="genre-column" class="column">
+  <h2 class="column-heading">Genres:</h2>
+  <ul class="genre-list">
+  </ul>
+  <!-- <button id="look-for-recipes">Find Recipes!</button> -->
+</div>
+<div id="player-column" class="column">
+<h2 class="column-heading">tru<em>Flo</em> Player:</h2>
+<ul class="player">
+  <li><img id="img_url" src=""></li>
+  <li id="title">Title:</li>
+  <li id="artist">Artist:</li>
+    <p><small>powered by BeatsMusic</small></p>
+    <audio src="" controls="controls"></audio>
+</ul>
+
+<!-- <button id="look-for-recipes">Find Recipes!</button> -->
+</div>
+
+  <!-- <div id="new-activity">
+    <h2 class="column-heading">Activities</h2>
+    <input id="new-activity-name" type="text" placeholder="Activity Name"/>
+    <input id="new-activity-duration" type="text" placeholder="Duration in hours"/>
+      <button id="new-activity-button">Add New Activity</button>
+  </div> -->
+
+  <!-- <div id="new-genre">
+    <h2 class="column-heading">Genres</h2>
+    <input id="new-genre-name" type="text" placeholder="Genre Name"/>
+    <input id="new-genre-activity" type="text" placeholder="Activity"/>
+      <button id="new-genre-button">Add New Genre</button>
+  </div> -->
+  <script>
+    $(document).ready(function(){
+        profileModel = new Profile();
+        console.log("this is a profile")
+        profileView = new ProfileView(profileModel);
+
+
+
+    });
+  </script>
 </div>

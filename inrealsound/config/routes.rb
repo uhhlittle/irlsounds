@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'application#index'
+  root to: 'homes#index'
 
   # devise_for :users do
   #   DELETE '/users/sign_out' => 'devise/sessions#destroy'
@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :profiles
+
+  resources :activities
+
+  resources :genres
 
 
 
