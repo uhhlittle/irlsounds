@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
+# def show
+#   @profile = Profile.find(params[:id])
+# end
+
 def show
   @profile = Profile.find(params[:id])
+
 end
 
 def new
@@ -12,6 +17,7 @@ def create
   redirect_to profile_path(@profile)
 end
 
+
 def edit
   @profile = current_user.profile
 end
@@ -22,9 +28,6 @@ def update
   redirect_to profile_path(@profile)
 end
 
-# def user_registration
-#   redirect_to new_profile_path
-# end
 
   private
 

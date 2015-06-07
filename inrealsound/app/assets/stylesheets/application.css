@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.title_text {
+  text-align: center;
+  font-size: 100px;
+}

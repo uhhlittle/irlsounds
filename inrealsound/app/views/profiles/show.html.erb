@@ -1,5 +1,10 @@
 <h1> Welcome <%=@profile.name %> </h1>
 <div class= "profile_view" >
+  <div class="profile_info">
+    <%@profile.name%>
+    <%=@profile.location %>
+    <%@profile.dob%>
+  </div>
   <div id= "view_buttons">
     <%= link_to "Edit Profile Info", edit_profile_path %>
   </div>

@@ -8,6 +8,7 @@ var ProfileModel = Backbone.Model.extend({
   loadActivities: function(){
     for( var x = 0; x < globals.activities.length; x++){
     newProfile.activities.push(Activity.new(globals.activities[x]));
+
     }
   },
   urlRoot: '/profile'
