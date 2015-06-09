@@ -1,19 +1,19 @@
-var Activity = function(id, name, duration){
+var Genre = function(id, name, activity){
   this.id = id;
   this.name = name;
-  this.duration = duration;
+  this.activity = activity;
 }
 
-Activity.prototype = {
+Genre.prototype = {
   save: function(){
     $.ajax({
       type: 'POST',
-      data: { activity: {id: this.id, name: this.name, duration: this.duration}},
+      data: { genre: {id: this.id, name: this.name, activity: this.activity}},
       dataType: 'json',
-      url: "/activities"
+      url: "/genres"
     }).done(function(response){
       console.log("model saved")
-      profileModel.fetchActivities();
+      profileModel.fetchGenres();
     }).fail(function(){
       console.log("failed to save")
     })
@@ -21,24 +21,24 @@ Activity.prototype = {
   update: function(data){
     $.ajax({
       type: 'PUT',
-      data: {activity: data},
+      data: {genre: data},
       dataType: 'json',
-      url: "/activities/" + this.id
+      url: "/genres/" + this.id
     }).done(function(response){
-      profileModel.fetchActivities();
+      profileModel.fetchGenres();
       console.log("model updated")
     }).fail(function(){
       console.log("failed to updated")
     })
   },
-  deleteActivty: function(){
+  deleteGenre: function(){
     $.ajax({
       type: 'DELETE',
       data: {_method: 'delete'},
       dataType: 'json',
-      url: "/activities/" + this.id
+      url: "/genres/" + this.id
     }).done(function(response){
-      profileModel.fetchActivities();
+      profileModel.fetchGenres();
       console.log("model deleted")
     }).fail(function(){
       console.log("failed to delete")

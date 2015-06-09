@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  resources :activities
+
+  resources :genres
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
